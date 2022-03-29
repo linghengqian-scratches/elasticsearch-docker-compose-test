@@ -1,0 +1,5 @@
+# copy the defaults to the custom file, refer to https://www.elastic.co/guide/en/kibana/8.1/docker.html#docker-defaults
+server.host: 0.0.0.0
+server.shutdownTimeout: 5s
+elasticsearch.hosts: ['http://elasticsearch:9200']
+monitoring.ui.container.elasticsearch.enabled: true

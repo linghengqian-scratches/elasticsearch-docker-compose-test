@@ -1,0 +1,26 @@
+version: "3.8"
+services:
+  elasticsearch-node01:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.1.1
+    volumes:
+      - elasticsearch-data01:/usr/share/elasticsearch/data
+      - ./elasticsearch-node01.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+  kibana-node01:
+    image: docker.elastic.co/kibana/kibana:8.1.1
+    ports:
+      - "5601:5601"
+    volumes:
+      - kibana-data01:/usr/share/kibana/data
+      - ./kibana-node01.yml:/usr/share/kibana/config/kibana.yml
+volumes:
+  elasticsearch-data01:
+    driver: local
+  kibana-data01:
+    driver: local
