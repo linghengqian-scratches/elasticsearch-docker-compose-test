@@ -1,4 +1,4 @@
-- This repository is associated with the issue.
+- This repository is associated with https://discuss.elastic.co/t/when-mounting-elasticsearch-yml-docker-displays-device-or-resource-busy/300981?u=linghengqian .
 - After installing docker desktop under windows, execute the following command to reproduce.
 ```shell
 wsl -d docker-desktop
